@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Course</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <h1>Delete Course</h1>
+    <p>Are you sure you want to delete <b>{{ course.name }}</b>? Students in this course will also be deleted.</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+    </form>
+    <p><a href="{% url 'course_list' %}">Cancel</a></p>
+</body>
+</html>

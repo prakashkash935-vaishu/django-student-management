@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course List</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background: #eaf2f8; }
+    </style>
+</head>
+<body>
+    <h1>Course List</h1>
+    <p>
+        <a href="{% url 'course_create' %}">+ Add Course</a> |
+        <a href="{% url 'student_list' %}">Students</a>
+    </p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Duration</th>
+            <th>Fee</th>
+            <th>Actions</th>
+        </tr>
+        {% for course in courses %}
+        <tr>
+            <td>{{ course.name }}</td>
+            <td>{{ course.duration }}</td>
+            <td>{{ course.fee }}</td>
+            <td>
+                <a href="{% url 'course_update' course.pk %}">Edit</a> |
+                <a href="{% url 'course_delete' course.pk %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
