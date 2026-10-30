@@ -8,7 +8,7 @@ A web application to manage students and courses, built with Django.
 - Django admin panel
 
 ## Tech Stack
-Python, Django, SQLite (MySQL planned), HTML, CSS
+Python, Django, MySQL, HTML, CSS
 
 ## How to Run
 1. Clone the repo
